@@ -6,7 +6,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 
-public class RahulShettyDemo01 {
+public class RahulShettyDemo01Test {
 
 	public static void main(String[] args) throws InterruptedException {
 		// TODO Auto-generated method stub
