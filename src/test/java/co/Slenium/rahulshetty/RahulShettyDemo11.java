@@ -1,0 +1,35 @@
+package co.Slenium.rahulshetty;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
+import org.testng.annotations.Test;
+
+public class RahulShettyDemo11 {
+
+	@Test
+	public void test111(){
+		// TODO Auto-generated method stub
+		WebDriver driver = new ChromeDriver();
+		driver.get("https://rahulshettyacademy.com/locatorspractice/");
+		driver.manage().window().maximize();
+		driver.findElement(By.id("inputUsername")).sendKeys("Rahul");
+		driver.findElement(By.name("inputPassword")).sendKeys("rahulshettyacademy");
+		driver.findElement(By.className("signInBtn")).click();
+		//driver.findElement(By.linkText("Sign In")).click();
+		//driver.findElement(By.partialLinkText("Sign In")).click();
+		try {
+			Thread.sleep(5000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		System.out.println(driver.findElement(By.tagName("h1")).getText());
+		Assert.assertEquals(driver.findElement(By.tagName("h1")).getText(), "Welcome to Rahul Shetty Academy");
+		driver.findElement(By.xpath("//button[text()='Log Out']")).click();
+		driver.close();
+
+	}
+}
